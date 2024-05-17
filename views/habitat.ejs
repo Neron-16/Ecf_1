@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>vue globale des habitats</title>
+</head>
+<body>
+
+    <%- include ("./partials/header.ejs") %>
+    <br>
+    <h2 class="title has-text-centered">Découvrant ensemble nos différents habitats :</h2>
+    <% habitats.forEach((hab) => { %>
+
+    <section class="section is-medium">
+        <h1 class="title "> <%= hab.nom %> </h1>
+        <div class="card">
+          <div class="card-image">
+              <figure class="image is-4by3">
+                <img
+                  src= "<%= hab.image_habitat %>"
+                  alt=""
+                />
+              </figure>
+          </div>
+          <div class="card-content">
+            <p> <%= hab.description %> </p>
+            <br>
+            <div class="media">
+                <button class="button is-small">
+                    <figure class="image is-16x16">
+                    <img src="../img_zoo/p.acc/2fleche.png" />
+                    </figure>     
+                </button>
+            </div>
+          </div>
+        </div>
+    </section>
+    <% hab.animaux.forEach((mai) => { %>
+    <section class="section is-medium has-background-info" id="fleche">
+          <div class="columns">
+            <div class="column">
+                <div class="card">
+                    <div class="card-image">
+                      <figure class="image is-4by3">
+                        <img
+                          src="<%= mai.image_animal %>"
+                          alt="Placeholder image"
+                        />
+                      </figure>
+                      <h1><strong><%= mai.prenom %></strong></h1>
+                    </div> 
+                  <div class="card-content">
+                  <div class="media">
+                    <div class="content">
+                      <h1> <strong>Caractéristique de l'animal : </strong></h1>
+                      <br>
+                    <div class="table is-hoverable">
+                    <table class="table">
+                      <tbody>
+                        <tr>
+                          <td>Prénom</td>
+                          <td> <%= mai.prenom %> </td>
+                        </tr>
+                        <tr>
+                          <td>Race</td>
+                          <td><%= mai.abel %></td>
+                        </tr>
+                        <tr>
+                          <td>Habitat</td>
+                          <td><%= hab.nom %> </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+            </div>   
+            <br> 
+             <h3 class="title has-text-centered">Avis du vétérinaire</h3>
+             <p>Information et détail de l'état de l'animal : </p>
+             <br>
+             <div class="card">
+              <div class="card-content">
+                <div class="content">
+                  <div class="table is-fullwidth">
+                    <table class="table">
+                      <tbody>
+                        <tr>
+                            <td>Etat de l'animal</td>
+                            <td><%= mai.etat %> </td>
+                          </tr>
+                        <tr>
+                          <td>Nourriture proposée</td>
+                          <td><%= mai.nourriture %></td>
+                        </tr>
+                        <tr>
+                          <td>Le grammage de la nourriture </td>
+                          <td><%= mai.quantite %>kg</td>
+                        </tr>
+                        <tr>
+                          <td>Date de passage</td>
+                          <td><%= mai.date %></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    </div> 
+                   </div> 
+                  </div> 
+                </div> 
+              </div>
+            </div> 
+     </section>
+     <% }) %>  
+     <% }) %>
+   
+    
+<%- include ("./partials/footer.ejs") %>
+
+    <script src="./J.s/index.js"></script>
+</body>
+</html>

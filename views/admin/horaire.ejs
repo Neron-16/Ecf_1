@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>gestion des horaires</title>
+</head>
+<body>
+  
+    <section class="hero is-success is-small">      
+        <div class="hero-body">
+          <div class="container has-text-centered">
+            <h1 class="title is-1 has-text-left">Horaires</h1>
+            <section class="hero is-white is-small is-mobile">
+                <div class="hero-body">
+                  <div class="table-container">
+                    <div class="table-container">
+                        <table class="table is-fullwidth">
+                          <tbody>
+                            <tr>
+                              <th class="is-light">jours</th>
+                              <th class="is-light">Heure d'ouverture</th>
+                              <th class="is-light">Heure de fermeture</th>
+                              <th class="is-light">Fermé</th>
+                            </tr>
+                            <tr>
+                              <th>Lundi</th>
+                              <th><span class="tag is-info is-large">08:30</span></th>
+                              <th><span class="tag is-info is-large">19:00</span></th>
+                              <th><figure class="image is-32x32">
+                                <img src="../img_zoo/p.acc/on.png" />
+                              </figure></th>
+                            </tr>
+                            <tr>
+                                <th>Mardi</th>
+                                <th><span class="tag is-info is-large">08:30</span></th>
+                                <th><span class="tag is-info is-large">19:00</span></th>
+                                <th><figure class="image is-32x32">
+                                    <img src="../img_zoo/p.acc/on.png" />
+                                  </figure></th>
+                              </tr>
+                              <tr>
+                                <th>Mercredi</th>
+                               <th><span class="tag is-info is-large">08:30</span></th>
+                               <th><span class="tag is-info is-large">19:00</span></th>
+                                <th><figure class="image is-32x32">
+                                    <img src="../img_zoo/p.acc/on.png" />
+                                  </figure></th>
+                              </tr>
+                              <tr>
+                                <th>Jeudi</th>
+                                <th><span class="tag is-info is-large">08:30</span></th>
+                                <th><span class="tag is-info is-large">19:00</span></th>
+                                <th><figure class="image is-32x32">
+                                    <img src="../img_zoo/p.acc/on.png" />
+                                  </figure></th>
+                              </tr>
+                              <tr>
+                                <th>Vendredi</th>
+                               <th><span class="tag is-info is-large">08:30</span></th>
+                               <th><span class="tag is-info is-large">19:00</span></th>
+                                <th><figure class="image is-32x32">
+                                    <img src="../img_zoo/p.acc/on.png" />
+                                  </figure></th>
+                              </tr>
+                              <tr>
+                                <th>Samedi</th>
+                                <th><span class="tag is-info is-large">--:--</span></th>
+                                <th><span class="tag is-info is-large">--:--</span></th>
+                                <th><figure class="image is-32x32">
+                                    <img src="../img_zoo/p.acc/off.png" />
+                                  </figure></th>
+                              </tr>
+                              <tr>
+                                <th>Dimanche</th>
+                                <th><span class="tag is-info is-large">--:--</span></th>
+                                <th><span class="tag is-info is-large">--:--</span></th>
+                                <th><figure class="image is-32x32">
+                                    <img src="../img_zoo/p.acc/off.png" />
+                                  </figure></th>
+                              </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                  </div>
+                </div>
+            </section>
+          </div>
+        </div>
+    </section>
+
+    <%- include ("../partials/dashbord.ejs") %>
+
+<script src="./J.s/index.js"></script>   
+</body>
+</html>

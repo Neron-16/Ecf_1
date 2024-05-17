@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>gestion des services</title>
+</head>
+<body>
+  
+
+    <section class="hero is-success is-small">      
+        <div class="hero-body">
+          <div class="container has-text-centered">
+            <h1 class="title is-1 has-text-left">Services</h1>
+          <section class="hero is-white">
+              <div class="hero-body">
+                <div class="table-container">
+                  <table class="table is-fullwidth">
+                    <tbody>
+                        <tr>
+                            <th class="is-light">Nom</th>
+                            <th class="is-light">Déscription</th>
+                            <th class="is-light">Image</th>
+                            <th class="is-light">Modifier</th>
+                            <th class="is-light">Supprimer</th>
+                          </tr>
+                          <% resultat.forEach ((serv) => { %>
+                          <tr>
+                          <form action="/admin/service/change/<%= serv.service_id %>" method="post">
+                            <td><input type="text" name="nom" class="input"  value="<%= serv.nom %>"></td>
+                            <td><input type="placeholder" name="description" class="input" value="<%= serv.description %>"></td>
+                            <td><input type="text" name="image_service" class="input"  value="<%= serv.image_service %>"></td>
+
+                            <th><input type="submit" value="modifier" class="button is-warning"></th> 
+                          </form>
+                          <form action="/admin/service/delete/<%= serv.service_id %>" method="post">
+                            <th><input type="submit" value="supprimer" class="button is-danger"></th> 
+                          </form> 
+                          </tr>
+                          <% }); %>
+                    </tbody>
+                  </table>
+                  
+                  <table class="table is-fullwidth">
+                    <tbody>
+                      <tr>
+                        <th class="is-light">Nom</th>
+                        <th class="is-light">Description</th>
+                        <th class="is-light">Image</th>
+                        <th class="is-light">Ajouter</th>
+                      </tr>
+                      <tr>
+                        <form action="/admin/service/add/" method="post">
+                            <td><input type="text" name="nom" class="input"  value=""></td>
+                            <td><input type="placeholder" name="description" class="input" value=""></td>
+                            <td><input type="text" name="image_service" class="input"  value=""></td>
+                            <th><input type="submit" value="ajouter" class="button is-info"></th>
+                        </form>
+                      </tr>  
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+          </section>
+          </div>
+        </div>
+    </section>
+
+    <%- include ("../partials/dashbord.ejs") %>
+
+<script src="./J.s/index.js"></script>  
+</body>
+</html>

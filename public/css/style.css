@@ -1,0 +1,17 @@
+.imagback {
+    height:550px;
+    background-size: 100% 100%;
+    background-image: url("../img_zoo/savane/safari2.jpg");
+    background-repeat: no-repeat;
+} 
+
+/* page service */
+
+.jungle {
+    height:400px;
+    background-size: 100% 100%;
+    background-image: url("../img_zoo/jungle/biche.png.jpg");
+    background-repeat: no-repeat;
+}
+
+/* page habitat */

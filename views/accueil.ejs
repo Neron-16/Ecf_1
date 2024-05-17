@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>MON ECF</title>
+</head>
+<body>
+    <%- include ("./partials/header.ejs") %>
+
+    <section class="hero imagback"> 
+        <div class="hero-body">
+          <div class="">
+            <p class="title"></p>
+            <p class="subtitle"></p>
+          </div>
+        </div>
+    </section>
+
+    <section class="section is-medium">
+        <h1 class="title has-text-centered has-text-danger">Présentation du ZOO ARCADIA</h1>
+        <p class="subtitle">Bienvenue dans le projet du Zoo d'Arcadia, une initiative passionnante visant à créer une expérience interactive et éducative pour les passionnés de la faune et de la nature. Situé au cœur de la magnifique forêt de Brocéliande en Bretagne depuis 1960, le Zoo d'Arcadia est bien plus qu'un simple parc animalier : c'est un sanctuaire de biodiversité, un centre de recherche et d'éducation, et un lieu de préservation dévoué à la sauvegarde des espèces menacées.
+
+            Au fil des décennies, le Zoo d'Arcadia a évolué pour devenir un pilier de la communauté, offrant aux visiteurs une expérience immersive au sein de différents habitats naturels du monde entier, de la majestueuse savane africaine à la luxuriante jungle amazonienne. Grâce à nos installations modernes et à notre engagement envers le bien-être animal, nous offrons à nos résidents des environnements stimulants et respectueux de leur habitat naturel.
+            
+            Dans le cadre de notre mission de conservation, nous travaillons en étroite collaboration avec des organismes de protection de la faune et des institutions de recherche pour préserver la diversité biologique de notre planète. De la reproduction en captivité à la réintroduction dans la nature, notre équipe de spécialistes dévoués travaille sans relâche pour assurer un avenir durable aux espèces menacées.
+            
+            À travers ce projet, nous vous invitons à explorer les coulisses du Zoo d'Arcadia, à découvrir nos résidents fascinants, à en apprendre davantage sur nos programmes de conservation et à vous engager dans notre mission de protection de la vie sauvage. Bienvenue dans notre monde, où la nature est au premier plan et où chaque visite est une aventure inoubliable.</p>
+    </section>
+
+    <section class="section has-background-black ">
+        <h1 class="title has-text-white	has-text-centered has-text-danger">Nos différents habitats</h1>
+        <h2 class="subtitle  has-text-white has-text-centered	">
+            Bienvenue dans les vastes étendues sauvages du Zoo d'Arcadia, où la nature règne en maître dans trois habitats distincts : la jungle, la savane et les marais. Préparez-vous à plonger dans des environnements uniques et diversifiés, où chaque coin recèle des merveilles de la faune et de la flore.
+
+            Dans la jungle, laissez-vous envelopper par la canopée luxuriante et les sentiers sinueux qui vous mèneront à la découverte d'une multitude de créatures exotiques. Des singes bondissants aux papillons aux couleurs vives en passant par les serpents silencieux, chaque recoin de la jungle abrite une vie animée et mystérieuse.
+            
+            Poursuivez votre voyage jusqu'à la savane, où les vastes plaines s'étendent à perte de vue, parsemées d'acacias solitaires et habitées par une faune majestueuse. Contemplez le spectacle envoûtant des troupeaux en migration, des lions en chasse et des éléphants se désaltérant aux points d'eau, et laissez-vous imprégner par l'esprit sauvage de la savane africaine.
+            
+            Enfin, explorez les marais, où les eaux calmes et les roseaux ondulants offrent un refuge à une multitude d'espèces aquatiques. Des crocodiles silencieux aux oiseaux échassiers gracieux en passant par les grenouilles chantantes, les marais abritent une vie abondante et fascinante, témoignant de la richesse de ces écosystèmes humides.
+            
+            Au Zoo d'Arcadia, chaque habitat est une invitation à l'aventure et à la découverte, où vous pourrez observer de près la diversité étonnante de la vie sauvage et en apprendre davantage sur les merveilles de la nature. Préparez-vous à un voyage inoubliable à travers la jungle, la savane et les marais, où l'émerveillement vous attend à chaque tournant.
+        </h2>
+        <div class="columns is-desktop ">
+            <div class="column">
+                <h1 class="title has-text-primary">L'habitat Jungle</h1>
+                <figure class="image is-256x256">
+                    <img src="img_zoo/ours brun.png.jpg" />
+                </figure><br>
+                <article class="message is-dark">
+                    <div class="message-body">
+                        Plongez au cœur de la jungle au Zoo d'Arcadia, un écosystème luxuriant et mystérieux où la vie foisonne dans une explosion de couleurs et de sons. <br> Parmi les arbres centenaires et les lianes entrelacées, découvrez une multitude de créatures fascinantes, des singes malicieux aux oiseaux aux plumes éclatantes. Marchez sur les sentiers sinueux à travers la dense végétation et laissez-vous imprégner par les parfums envoûtants de la jungle. Chaque coin de la jungle révèle des merveilles cachées et des secrets à découvrir. Écoutez les chants des oiseaux exotiques et les appels des animaux lointains alors que vous vous aventurez plus profondément dans cet habitat captivant. L'habitat jungle est une invitation à explorer les mystères de la nature sauvage et à s'émerveiller devant la richesse de la biodiversité tropicale.
+                    </div>
+                </article>
+            </div>
+            <div class="column">
+                <h1 class="title  has-text-link">L'habitat Savane</h1>
+                <figure class="image is-256x256">
+                    <img src="img_zoo/savane/zebre1.jpn.webp" />
+                </figure><br>
+                <article class="message is-dark">
+                    <div class="message-body">
+                        Explorez la majestueuse savane au Zoo d'Arcadia, un vaste paysage où les horizons infinis se perdent à l'horizon et où la faune sauvage prospère dans toute sa splendeur. <br> Contemplez les troupeaux élégants de zèbres, de gazelles et de gnous se déplaçant gracieusement à travers les plaines, tandis que les lions se préparent à la chasse sous le soleil brûlant. Admirez les éléphants majestueux se désaltérant aux points d'eau et les girafes élancées se nourrissant des feuilles des acacias solitaires. Marchez parmi les herbes dorées et les baobabs centenaires, et ressentez la puissance et la sérénité de ce paysage emblématique de l'Afrique. Au Zoo d'Arcadia, l'habitat savane offre une immersion totale dans la beauté et la grandeur de la nature sauvage, une expérience inoubliable pour les visiteurs de tous âges.
+                    </div>
+                </article>
+            </div>
+            <div class="column">
+                <h1 class="title  has-text-warning">L'habitat Marais</h1>
+                <figure class="image is-256x256">
+                    <img src="img_zoo/marais/flamant rose1.png.jpg" />
+                </figure><br>
+                <article class="message is-dark">
+                    <div class="message-body">
+                        Plongez dans l'habitat des marais au Zoo d'Arcadia, un monde tranquille et mystérieux où la vie palpite dans les eaux sombres et les roseaux ondulants. Explorez les étendues humides et marécageuses, où une multitude d'espèces aquatiques trouve refuge et prospère. Observez les crocodiles glissant silencieusement à travers les canaux, les hérons élégants pêchant habilement dans les eaux peu profondes, et les grenouilles émettant leurs chants nocturnes envoûtants. Marchez sur les passerelles sur pilotis et laissez-vous imprégner par la tranquillité et la beauté de cet écosystème unique. Des lotus en fleurs aux nénuphars flottants, chaque coin des marais révèle une vie foisonnante et diversifiée. L'habitat des marais est une invitation à explorer les merveilles cachées de la nature aquatique et à découvrir la beauté fragile de ces écosystèmes humides.
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section> 
+
+    <section class="section ">
+        <h1 class="title has-text-white	has-text-centered has-text-success">Nos différents services</h1>
+        <h2 class="subtitle has-text-centered">
+            Le Zoo Arcadia offre une gamme de services diversifiée pour répondre à tous les besoins de ses visiteurs. Des habitats captivants aux visites guidées interactives, en passant par une délicieuse cuisine thématique et des boutiques de souvenirs uniques, chaque aspect de votre visite est conçu pour vous offrir une expérience immersive et mémorable. Nos installations accessibles garantissent à tous les visiteurs une expérience agréable, tandis que nos événements spéciaux et nos programmes éducatifs ajoutent une touche d'excitation supplémentaire à votre journée. Au Zoo Arcadia, plongez-vous dans l'aventure et découvrez la beauté et la diversité de la vie sauvage, tout en créant des souvenirs inoubliables avec vos proches.
+        </h2>
+        <div class="columns is-desktop ">
+            <div class="column">
+                <h1 class="title has-text-primary">Notre restauration</h1>
+                <figure class="image is-256x256">
+                    <img src="img_zoo/p.acc/restaurant.jpeg"/>
+                </figure><br>
+                <article class="message is-dark">
+                    <div class="message-body">
+                        Venez vous détendre et recharger vos batteries dans notre restaurant pittoresque. Nous proposons une variété de plats délicieux et frais pour satisfaire tous les goûts. Profitez de notre ambiance conviviale tout en dégustant vos repas préférés.
+                    </div>
+                </article>
+            </div>
+            <div class="column">
+                <h1 class="title has-text-link">Visite avec  guide</h1>
+                <figure class="image is-256x256">
+                    <img src="img_zoo/p.acc/guide.jpeg"/>
+                </figure><br>
+                <article class="message is-dark">
+                    <div class="message-body">
+                        Nos guides expérimentés sont là pour vous offrir des visites guidées informatives et divertissantes à travers les différents habitats du zoo. Découvrez les merveilles de la faune et de la flore tout en apprenant des faits fascinants sur les espèces que vous rencontrerez.
+                    </div>
+                </article>
+            </div>
+            <div class="column">
+                <h1 class="title  has-text-warning">Tour en train</h1>
+                <figure class="image is-256x256">
+                    <img src="img_zoo/p.acc/train.jpeg"/>
+                </figure><br>
+                <article class="message is-dark">
+                    <div class="message-body">
+                        Montez à bord de notre petit train et laissez-vous transporter à travers le zoo avec confort et commodité. Profitez d'une vue panoramique sur les habitats et les animaux tout en écoutant les commentaires instructifs de notre guide.
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section> 
+
+    <section class="section is-small">
+        <h1 class="title">L'avis de nos visiteurs</h1>
+                <% resultat.forEach((row) => { %>
+                <div class="columns is-mobile">
+                    <div class="column">
+                        <div class="card">
+                            <div class="card-content">
+                            <div class="content">
+                            <h4><%= row.pseudo %></h4>
+                            <%= row.commentaire %>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% }); %>
+                <form action="/" method="post">
+                <div class="field" >
+                    <label class="label">Pseudo</label>
+                    <div class="control">
+                      <input class="input" type="text" name="pseudo" placeholder="Mr Smith">
+                    </div>
+                </div> 
+                <div class="field">
+                    <div class="control">
+                      <input class="input" type="text" name="commentaire" placeholder="Laisser un avis....">
+                    </div>
+                </div>
+                <div class="field">
+                    <p class="control">
+                      <button class="button is-success" value="envoyer">
+                        Envoyer
+                      </button>
+                    </p>
+                </div>
+            </form>
+    </section>
+
+    <%- include ("./partials/footer.ejs") %>
+    
+<script src="./J.s/index.js"></script>
+</body>
+</html>

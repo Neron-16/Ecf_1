@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>gestion des animaux</title>
+</head>
+<body>
+        <section class="hero is-success is-small">      
+        <div class="hero-body">
+          <div class="container has-text-centered">
+            <h1 class="title is-1 has-text-left">Animaux</h1>
+              <div class="field has-addons">
+              </div>
+              
+            <section class="hero is-white">
+              <div class="hero-body">
+                <div class="table-container">
+                  <table class="table is-fullwidth">
+                    <tbody>
+                      <tr>
+                        <th class="is-light">Prenom</th>
+                        <th class="is-light">Race</th>
+                        <th class="is-light">Habitat</th>
+                        <th class="is-light">Etat de l'animal</th>
+                        <th class="is-light">Modifier</th>
+                        <th class="is-light">Supprimer</th>
+                      </tr>
+                       
+                      <tr>
+                        <% resultat.forEach((anim) => { %>
+                    <form action="/admin/animaux/change/<%= anim.animal_id %> " method="post">
+                        <td><input type="text" name="prenom" class="input"  value="<%= anim.prenom %>"></td>
+                        <td><input type="text" name="abel" class="input"  value="<%= anim.abel %>"></td>
+                        <td>
+                            <select name="habitat" class="input">
+                                <% if (anim.nom === 'jungle') { %>
+                                  <option value="jungle">jungle</option>
+                                  <option value="savane">savane</option>
+                                  <option value="marais">marais</option>
+                                <% } else if (anim.nom === 'savane') { %>
+                                  <option value="savane">savane</option>
+                                  <option value="marais">marais</option>
+                                  <option value="jungle">jungle</option>
+                                <% } else { %>
+                                  <option value="marais">marais</option>
+                                  <option value="savane">savane</option>
+                                  <option value="jungle">jungle</option>
+                                <% } %>
+                              </select>
+                        </td>
+                        <td><input type="text" name="etat" class="input"  value="<%= anim.etat %>"></td>
+                        <th><input type="submit" value="modifier" class="button is-warning  "></th>
+                    </form>
+                    <form action="/admin/animaux/delete/<%= anim.animal_id %>" method="post">
+                        <th><input type="submit" value="supprimer" class="button is-danger "></th>
+                    </form>
+                      </tr>
+                       <% }); %>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                          <th class="is-light">Prenom</th>
+                          <th class="is-light">Race</th>
+                          <th class="is-light">Habitat</th>
+                          <th class="is-light">Etat de l'animal</th>
+                          <th class="is-light">Ajouter</th>
+                        </tr>
+                        <tr>
+                    <form action="/admin/animaux/add/" method="post">
+                          <td><input type="text" name="prenom" class="input"  value=""></td>
+                          <td><input type="text" name="abel" class="input"  value=""></td>
+                          <td>
+                        <select name="habitat" class="input" >
+                                 <option value="jungle">jungle</option>
+                                 <option value="savane">savane</option>
+                                 <option value="marais">marais</option>
+                        </select>
+                          </td>
+                          <td><input type="text" name="etat" class="input"  value=""></td>
+                          <td><input type="submit" value="Ajouter" class="button is-info"></td>
+                    </form>
+                        </tr>
+                      </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+              </div>
+            </div>
+        </section> 
+
+        <%- include ("../partials/dashbord.ejs") %>
+</body>
+</html>

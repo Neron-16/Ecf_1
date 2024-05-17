@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>gestion des habitat </title>
+</head>
+<body>
+  
+    <section class="hero is-success is-small">      
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <h1 class="title is-1 has-text-left">Habitat</h1>
+            <div class="field has-addons">
+            </div>
+            <section class="hero is-white">
+              <div class="hero-body">
+                <div class="table-container">
+                  <table class="table is-fullwidth">
+                    <tbody>
+                      <tr>
+                        <th class="is-light">Habitat</th>
+                        <th class="is-light">Description</th>
+                        <th class="is-light">Etat de l'habitat</th>
+                        <th class="is-light">Besoins d'amélioration</th>
+                        <th class="is-light">Commentaire</th>
+                        <th class="is-light">Image</th>
+                        <th class="is-light">Modifier</th>
+                        <th class="is-light">Supprimer</th>
+                      </tr>
+                      <% resultat.forEach((com)=> { %>
+                      <tr> 
+                      <form action="/admin/habitat/change/<%= com.habitat_id %>" method="post">
+                        <td><input type="text" name="nom" class="input"  value="<%= com.nom %>"></td>
+                        <td><input type="text" name="description" class="input"  value="<%= com.description %>"></td>
+                        <td><input type="text" name="etat_habitat" class="input"  value="<%= com.etat_habitat %>"></td>
+                        <td>  
+                           <select name="besoin_amelioration" class="input" >
+                          <% if ( com.besoin_amelioration === 'oui') { %>
+                            <option value="oui">oui</option>
+                            <option value="non">non</option>
+                          <% }else { %>
+                            <option value="non">non</option>
+                            <option value="oui">oui</option>
+                         <% } %>
+                           </select>
+                          </td>
+                        <td><input type="text" name="commentaire_habitat" class="input"  value="<%= com.commentaire_habitat %>"></td>
+                        <td><input type="text" name="image_habitat" class="input"  value="<%= com.image_habitat %>"></td>
+                        <th><input type="submit" value="modifier" class="button is-warning"></th>
+                      </form>
+                       <form action="/admin/habitat/delete/<%= com.habitat_id %>" method="post">
+                        <th><input type="submit" value="supprimer" class="button is-danger"></th> 
+                      </form>
+                      </tr>
+                      <% }); %>
+                    </tbody>
+                    <tbody>
+                      <tr>
+                        <th class="is-light">Habitat</th>
+                        <th class="is-light">Description</th>
+                        <th class="is-light">Etat de l'habitat</th>
+                        <th class="is-light">Besoins d'amélioration</th>
+                        <th class="is-light">Commentaire</th>
+                        <th class="is-light">Image</th>
+                        <th class="is-light">Ajouter</th>
+                      </tr>
+                      <tr> 
+                    <form action="/admin/habitat/add/" method="post">
+                        <td><input type="text" name="nom" class="input"  value=""></td>
+                        <td><input type="text" name="description" class="input"  value=""></td>
+                        <td><input type="text" name="etat_habitat" class="input"  value=""></td>
+                        <td> 
+                          <select name="besoin_amelioration" class="input" >
+                          <option value="oui">oui</option>
+                          <option value="non">non</option>
+                          </select>
+                        </td>
+                        <td><input type="text" name="commentaire_habitat" class="input"  value=""></td>
+                        <td><input type="text" name="image_habitat" class="input"  value=""></td>
+                        <th><input type="submit" value="Ajouter" class="button is-info"></th> 
+                    </form>
+                      </tr>
+            
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+    </section> 
+
+    <%- include ("../partials/dashbord.ejs") %>
+
+<script src="./J.s/index.js"></script>  
+</body>
+</html>

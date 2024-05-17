@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>vue globale de tous les services</title>
+</head>
+<body>
+    <%- include ("./partials/header.ejs") %>
+
+    <section class="hero"> 
+        <div class="hero-body">
+          <p class="title has-text-success has-text-centered">DECOUVREZ NOS DIFFERENTS SERVICES</p>
+          <div class="columns is-mobile">
+            <div class="column">
+                <p><strong>Découvrez la magie de la faune au Zoo Arcadia! Parcourez nos habitats réalistes en compagnie de nos guides expérimentés, ou optez pour une visite pittoresque à bord de notre petit train. Plongez au cœur de la nature sauvage. Une expérience inoubliable pour tous les amoureux des animaux! Ne perdez plus de temps, seul ou en famille</strong></p>
+                <br>
+                <figure class="image is-3by2">
+                  <img src="img_zoo/savane/savane.jpg" />
+                </figure>
+            </div>
+            <div class="column">
+              <figure class="image is-3by2">
+                <img src="img_zoo/savane/girafe.png.jpg" />
+              </figure>
+              <br>
+              <p><strong> que vous soyez fasciné par la majesté des grands félins, émerveillé par la grâce des primates ou captivé par la diversité colorée des oiseaux tropicaux, le Zoo Arcadia est un paradis pour les amoureux de la nature de tous âges. Ne manquez pas nos démonstrations d'alimentation, où vous pourrez en apprendre davantage sur les habitudes alimentaires et les comportements naturels de nos résidents animaliers.</strong></p>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <section class="section is-medium">
+        <% resultat.forEach((ser) => { %>
+        <h1 class="title has-text-centered has-text-danger"><%= ser.nom %></h1>
+        <div class="columns is-gapless">
+            <div class="column">
+                <div class="card">
+                    <div class="card-image">
+                      <figure class="image is-5by3 resto">
+                        <img
+                          src="<%= ser.image_service %>"
+                          alt=""
+                        />
+                      </figure>
+                    </div>
+                </div>
+                <br>
+                <div class="card">
+                    <div class="card-content">
+                      <div class="content">
+                        <%= ser.description %>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% }); %>
+    </section>
+
+    <%- include ("./partials/footer.ejs") %>
+    <script src="./J.s/index.js"></script>   
+</body>
+</html>

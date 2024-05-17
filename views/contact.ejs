@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <%- include ("./partials/header.ejs") %>
+
+    <div class="card">
+        <div class="card-content">
+          <div class="content">
+            <form class="box">
+                <div class="field">
+                    <label class="label">Titre</label>
+                    <div class="control">
+                    <input class="input" type="text" placeholder="Text input">
+                    </div>
+                    <label class="label">Indiquer votre Email</label>
+                    <div class="control">
+                    <input class="input" type="email" placeholder="e.g. alex@example.com" />
+                    </div>
+                    <label class="label">Message</label>
+                    <div class="control">
+                    <textarea class="textarea" placeholder="Textarea"></textarea>
+                    </div>
+                </div>
+                <button class="button is-primary">envoyer</button>
+              </form>
+          </div>
+        </div>
+      </div>
+
+
+
+    <%- include ("./partials/footer.ejs") %>
+
+    <script src="./J.s/index.js"></script>  
+</body>
+</html>

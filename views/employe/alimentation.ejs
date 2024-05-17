@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>Consommations alimentaires des animaux</title>
+</head>
+<body>
+    
+  <section class="hero is-success is-small">      
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title is-1 has-text-left">Alimentation</h1>
+        <div class="field has-addons"></div>   
+      <section class="hero is-white">
+          <div class="hero-body">
+            <div class="table-container">
+              <table class="table is-fullwidth">
+                <tbody>
+                  <tr>
+                    <th class="is-light">Animal</th>
+                    <th class="is-light">Date</th>
+                    <th class="is-light">Heure</th>
+                    <th class="is-light">Nourriture</th>
+                    <th class="is-light">Quantité</th>
+                    <th class="is-light">Modifier</th>
+                  </tr>
+                  <% resultat.forEach((alim) => { %>
+                  <tr>
+                  <form action="/employe/alimentation/change/<%= alim.animal_id %>" method="post">
+                    <td><input type="text" name="abel" class="input"  value="<%= alim.abel %>"></td>
+                    <td><input type="date" name="date" class="input"  value="<%= alim.date %>"></td>
+                    <td><input type="text" name="heure" class="input" value="<%= alim.heure %>"></td>
+                    <td>
+                      <select name="nourriture" class="input">
+                        <% if (alim.nourriture === 'viande') { %>
+                            <option value="viande" selected>viande</option>
+                            <option value="poisson">poisson</option>
+                            <option value="Graine de tournoesol">Graine de tournoesol</option>
+                            <option value="Légumes frais">Légumes frais</option>
+                            <option value="Fruits frais">Fruits frais</option>
+                        <% } else if (alim.nourriture === 'poisson') { %>
+                            <option value="viande">viande</option>
+                            <option value="poisson" selected>poisson</option>
+                            <option value="Graine de tournoesol">Graine de tournoesol</option>
+                            <option value="Légumes frais">Légumes frais</option>
+                            <option value="Fruits frais">Fruits frais</option>
+                        <% } else if (alim.nourriture === 'Graine de tournoesol') { %>
+                            <option value="viande">viande</option>
+                            <option value="poisson">poisson</option>
+                            <option value="Graine de tournoesol" selected>Graine de tournoesol</option>
+                            <option value="Légumes frais">Légumes frais</option>
+                            <option value="Fruits frais">Fruits frais</option>
+                        <% } else if (alim.nourriture === 'Légumes frais') { %>
+                            <option value="viande">viande</option>
+                            <option value="poisson">poisson</option>
+                            <option value="Graine de tournoesol">Graine de tournoesol</option>
+                            <option value="Légumes frais" selected>Légumes frais</option>
+                            <option value="Fruits frais">Fruits frais</option>
+                        <% } else { %>
+                            <option value="viande">viande</option>
+                            <option value="poisson">poisson</option>
+                            <option value="Graine de tournoesol">Graine de tournoesol</option>
+                            <option value="Légumes frais">Légumes frais</option>
+                            <option value="Fruits frais" selected>Fruits frais</option>
+                        <% } %>
+                    </select>
+                    
+                    </td>
+                    <td><input type="text" name="quantite" class="input"  value="<%= alim.quantite %>kg"></td>
+                    <td><input type="submit" value="modifier" class="button is-warning "></td>
+                  </form>
+                  </tr>
+                  <% }); %>
+              </table>
+             </div>
+           </div>
+         </section>
+      </div>
+    </div>
+  </section>
+    
+<%- include ("../partials/dashbordem.ejs") %>
+
+    <script src="./J.s/index.js"></script>  
+</body>
+</html>

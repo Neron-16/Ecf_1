@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>gestion de l'état de l'animal coté vététrinaire</title>
+</head>
+<body>
+
+    <section class="hero is-success is-small">      
+        <div class="hero-body">
+          <div class="container has-text-centered">
+            <h1 class="title is-1 has-text-left">L'état de l'animal</h1>
+            <div class="field has-addons"></div>   
+          <section class="hero is-white">
+              <div class="hero-body">
+                <div class="table-container">
+                  <table class="table is-fullwidth">
+                    <tbody>
+                      <tr>
+                        <th class="is-light">Animal</th>
+                        <th class="is-light">Habitat</th>
+                        <th class="is-light">Date</th>
+                        <th class="is-light">Heure</th>
+                        <th class="is-light">Nourriture</th>
+                        <th class="is-light">Etat de l'animal</th>
+                        <th class="is-light">compte rendu</th>
+                        <th class="is-light">Quantité</th>
+                        <th class="is-light">Modifier</th>
+                      </tr>
+                      <% resultat.forEach((veto) => { %>
+                      <tr>
+                      <form action="/veterinaire/vetoeta/change/<%= veto.rapport_veterinaire_id %>" method="post">
+                        <td><input type="text" name="abel" class="input"  value=" <%= veto.abel %>"></td>
+                        <td>
+                            <select name="habitat" class="input">
+                                <% if (veto.nom === 'jungle') { %>
+                                  <option value="jungle">jungle</option>
+                                  <option value="savane">savane</option>
+                                  <option value="marais">marais</option>
+                                <% } else if (veto.nom === 'savane') { %>
+                                  <option value="savane">savane</option>
+                                  <option value="marais">marais</option>
+                                  <option value="jungle">jungle</option>
+                                <% } else { %>
+                                  <option value="marais">marais</option>
+                                  <option value="savane">savane</option>
+                                  <option value="jungle">jungle</option>
+                                <% } %>
+                              </select>
+                        </td>
+                        <td><input type="date" name="date" class="input"  value=" <%= veto.date %>"></td>
+                        <td><input type="text" name="heure" class="input" value="<%= veto.heure %>"></td>
+                        <td>
+                          <select name="nourriture" class="input">
+                            <% if (veto.nourriture === 'viande') { %>
+                                <option value="viande" selected>viande</option>
+                                <option value="poisson">poisson</option>
+                                <option value="Graine de tournoesol">Graine de tournoesol</option>
+                                <option value="Légumes frais">Légumes frais</option>
+                                <option value="Fruits frais">Fruits frais</option>
+                            <% } else if (veto.nourriture === 'poisson') { %>
+                                <option value="poisson" selected>poisson</option>
+                                <option value="Graine de tournoesol">Graine de tournoesol</option>
+                                <option value="Légumes frais">Légumes frais</option>
+                                <option value="Fruits frais">Fruits frais</option>
+                                <option value="viande">viande</option>
+                            <% } else if (veto.nourriture === 'Graine de tournoesol') { %>
+                                <option value="Graine de tournoesol" selected>Graine de tournoesol</option>
+                                <option value="Légumes frais">Légumes frais</option>
+                                <option value="Fruits frais">Fruits frais</option>
+                                <option value="viande">viande</option>
+                                <option value="poisson">poisson</option>
+                            <% } else if (veto.nourriture === 'Légumes frais') { %>
+                                <option value="Légumes frais" selected>Légumes frais</option>
+                                <option value="Fruits frais">Fruits frais</option>
+                                <option value="viande">viande</option>
+                                <option value="poisson">poisson</option>
+                                <option value="Graine de tournoesol">Graine de tournoesol</option>
+                            <% } else { %>
+                                <option value="Fruits frais" selected>Fruits frais</option>
+                                <option value="viande">viande</option>
+                                <option value="poisson">poisson</option>
+                                <option value="Graine de tournoesol">Graine de tournoesol</option>
+                                <option value="Légumes frais">Légumes frais</option>
+                            <% } %>
+                        </select>
+                        </td>
+                        <td><input type="text" name="etat" class="input"  value="<%= veto.etat %>"></td>
+                        <td><input type="text" name="crveto" class="input"  value="<%= veto.crveto %>"></td>
+                        <td><input type="text" name="quantite" class="input"  value="<%= veto.quantite %>kg"></td>
+                        <td><input type="submit" value="modifier" class="button is-warning "></td>
+                      </form>
+                      </tr>
+                      <% }); %>
+                  </table>
+                </table>
+                 </div>
+               </div>
+             </section>
+          </div>
+        </div>
+      </section>
+
+   <%- include ("../partials/dashbordve.ejs") %>
+</body>
+</html>
