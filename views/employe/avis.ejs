@@ -25,8 +25,8 @@
                   </tr>
                   <% resultat.forEach((av) => { %>
                   <tr>
-                    <td><input type="text" name="abel" class="input"  value="<%= av.pseudo %>"></td>
-                    <td><input type="text" name="abel" class="input"  value="<%= av.commentaire %>"></td>
+                    <td><input type="text" name="pseudo" class="input"  value="<%= av.pseudo %>"></td>
+                    <td><input type="text" name="commentaire" class="input"  value="<%= av.commentaire %>"></td>
                     <td>
                       <%if( av.validation === null) { %>
                     <form action="/employe/avis/<%= av.avis_id %>/validation/1" method="post">

@@ -7,7 +7,7 @@ const myConnection = require('express-myconnection');
     user : 'root',
     password : '',
     port : 3306,
-    database : 'ecf'
+    database : 'ecf-new'
  };
 
 const app = express()
@@ -835,14 +835,15 @@ app.post("/employe/avis/:avis_id/validation/:validation",(req,res) => {
    })
 })
 app.post("/comment",(req,res)=>{
-    let pseudo = req.body.pseudo
     let commentaire = req.body.commentaire
+    let pseudo = req.body.pseudo
+    
  
     req.getConnection((erreur, connection)=>{
      if(erreur){
          console.log(erreur);
      }else{
-         connection.query('INSERT INTO avis(pseudo, commentaire) VALUES(?,?);', [pseudo,commentaire], (erreur, resultat)=>{
+         connection.query('INSERT INTO avis(commentaire,pseudo) VALUES(?,?);', [commentaire,pseudo], (erreur, resultat)=>{
              if(erreur){
                  console.log(erreur);
              }else{
