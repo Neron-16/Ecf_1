@@ -6,10 +6,10 @@ Ce projet utilise Node.js pour la création d'une application web. Vous trouvere
 
 Assurez-vous d'avoir les éléments suivants installés sur votre machine :
 
-- Node.js (version 20)
+- Node.js (version 20.11.1)
 - npm (gestionnaire de paquets Node.js)
 - PHPMyAdmin pour la gestion de la base de données
-
+- node module est déjà installer il n'est pas nécéssaire de le réinstaller avec la commande 'npm install'
 ## Installation
 
 1. **Cloner le dépôt**
