@@ -13,23 +13,24 @@
     <div class="card">
         <div class="card-content">
           <div class="content">
-            <form class="box">
+            <form class="box" action="/contact" method="post">
                 <div class="field">
-                    <label class="label">Titre</label>
+                    <label class="label"><Titre></label>
                     <div class="control">
-                    <input class="input" type="text" placeholder="Text input">
+                    <input class="input" type="text" name="titre" placeholder="Titre">
                     </div>
                     <label class="label">Indiquer votre Email</label>
                     <div class="control">
-                    <input class="input" type="email" placeholder="e.g. alex@example.com" />
+                    <input class="input" type="email"  name="email" placeholder="e.g. alex@example.com" />
                     </div>
                     <label class="label">Message</label>
                     <div class="control">
-                    <textarea class="textarea" placeholder="Textarea"></textarea>
+                    <textarea class="textarea"  name="message"  placeholder="Votre message"></textarea>
                     </div>
                 </div>
                 <button class="button is-primary">envoyer</button>
               </form>
+             <fieldset class="help is-info">Penser à vérifier vos Spam </fieldset> 
           </div>
         </div>
       </div>

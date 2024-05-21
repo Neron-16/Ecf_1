@@ -1,6 +1,7 @@
 const express = require("express");
 const mysql = require('mysql');
 const myConnection = require('express-myconnection'); 
+const nodemailer = require('nodemailer');
 
  const optionEcf = {
     host :'localhost',
@@ -122,6 +123,30 @@ app.get("/habitat",(req,res) => {
 
 app.get("/contact",(req,res) => {
     res.render('contact')
+})
+
+app.post("/contact",(req,res) => {
+    console.log(req.body)
+    let transporter = nodemailer.createTransport({
+        service: 'SendGrid',
+        auth: {
+            user: 'apikey', // C'est toujours 'apikey' pour SendGrid
+            pass: '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'
+        }
+    });
+    let mailOptions = {
+        from: 'zooarcadia303@gmail.com',
+        to: req.body.email,
+        subject: req.body.titre,
+        text: `Nous avons bien reçu votre message: "${req.body.message}"`
+    };
+    transporter.sendMail(mailOptions, function(error, info){
+        if (error) {
+        return console.log(error);
+        }
+        console.log('Email envoyé: ' + info.response);
+        });
+    res.redirect('/contact');
 })
 
 app.get("/connexion",(req,res) => {
@@ -876,7 +901,6 @@ app.get("/veterinaire/vetohabi",(req,res) => {
     })      
     
 })
-
 app.post("/veterinaire/vetohabi/add",(req,res) => {
     const { nom, commentaire_habitat, etat_habitat, besoin_amelioration } = req.body;
     // Requête SQL pour insérer un nouvel habitat
@@ -900,7 +924,6 @@ app.post("/veterinaire/vetohabi/add",(req,res) => {
     });
 
 })
-
 app.post("/veterinaire/vetohabi/change/:habitat_id", (req, res) => {
     const habitatId = req.params.habitat_id;
     const { nom, commentaire_habitat, etat_habitat, besoin_amelioration } = req.body;
@@ -925,7 +948,6 @@ app.post("/veterinaire/vetohabi/change/:habitat_id", (req, res) => {
         }
     });
 }) 
-
 app.post("/veterinaire/vetohabi/delete/:habitat_id",(req,res) =>{
     const habitatId = req.params.habitat_id;
  // Requête SQL pour supprimer l'habitat
@@ -1009,8 +1031,6 @@ app.post("/veterinaire/vetoeta/change/:rapport_veterinaire_id", (req, res) => {
         }
     });
 });
-
-
 
 
 // gestion de l'alimentation du zoo coté vétérinaire

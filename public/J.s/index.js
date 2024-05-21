@@ -1,6 +1,10 @@
 // mobile menu
 const burgerIcon = document.querySelector('#burger');
 const navbarMenu = document.querySelector('#navbarBasicExample');
+const button = document.getElementById('fleche');
+const animo = document.getElementById('animo');
+
+
 
 burgerIcon.addEventListener('click',() =>{
     navbarMenu.classList.toggle('is-active')
@@ -14,3 +18,13 @@ fileInput.onchange = () => {
     fileName.textContent = fileInput.files[0].name;
   }
 };
+
+button.addEventListener('click',() =>{ 
+
+  if(getComputedStyle(animo).display!="none"){
+    animo.style.display = "none";
+  } else {
+    animo.style.display = "block";
+  }
+
+})
